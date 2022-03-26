@@ -29,7 +29,7 @@ public class Assignment2App {
 
 	public static void messageToDisplay(int playerNumber, int randomNum, Scanner scanner) {
 		
-		int count =0;
+		int count =1;
 
 		while (count < 5 && playerNumber != randomNum) {
 			if (playerNumber < randomNum) {
@@ -43,9 +43,11 @@ public class Assignment2App {
 				playerNumber = Integer.valueOf(scanner.nextLine());
 				count++;
 
-			} else if (playerNumber == randomNum) {
+			} else  {
 				
-				System.out.println("You win!");		
+				System.out.println("You win!");	
+				count++;
+				scanner.close();
 			}
 			
 		}
@@ -53,6 +55,7 @@ public class Assignment2App {
 		if (playerNumber != randomNum && count == 5) {
 			
 			System.out.println("You lose, the number to guess was " + randomNum);
+			scanner.close();
 		}
 		
 		
