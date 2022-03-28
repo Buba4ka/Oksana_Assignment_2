@@ -9,19 +9,14 @@ public class Assignment2App {
 
 		Random randomNumber = new Random();
 		int random = randomNumber.nextInt(100) + 1;
-		System.out.println("Random nuber is " + random);
+//		System.out.println("Random number is " + random);
 
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("Pick a number between 1 and 100");
 
 		int inputInt = Integer.valueOf(scanner.nextLine());
 
-//		if (inputInt < 1 || inputInt > 100) {
-//
-//			System.out.println("Your guess is not between 1 and 100, please try again");
-//			inputInt = Integer.valueOf(scanner.nextLine());
-//
-//		}
+
 		messageToDisplay(inputInt, random, scanner);
 
 	}
@@ -30,7 +25,7 @@ public class Assignment2App {
 		int count = 1;
 		
 
-		while (count < 5 && playerNumber != randomNum) {
+		while (count < 5) {
 			
 			if (playerNumber > 100 || playerNumber < 1) {
 				System.out.println("Your guess is not between 1 and 100, please try again");
