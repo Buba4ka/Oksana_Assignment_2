@@ -9,7 +9,7 @@ public class Assignment2App {
 
 		Random randomNumber = new Random();
 		int random = randomNumber.nextInt(100) + 1;
-//		System.out.println("Random number is " + random);
+		System.out.println("Random number is " + random);
 
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("Pick a number between 1 and 100");
@@ -43,12 +43,11 @@ public class Assignment2App {
 				playerNumber = Integer.valueOf(scanner.nextLine());
 				count++;
 
+			} else if (playerNumber == randomNum) {
+				System.out.println("You win!");
+				break;
 			}
-		} 
-		if (playerNumber == randomNum) {
-			System.out.println("You win!");
-			
-		}  else if (count == 5 && playerNumber != randomNum) {
+		} if (count == 5 && playerNumber != randomNum) {
 			System.out.println("You lose, the number to guess was " + randomNum);
 		} 
 		scanner.close();
