@@ -22,34 +22,38 @@ public class Assignment2App {
 	}
 
 	public static void messageToDisplay(int playerNumber, int randomNum, Scanner scanner) {
-		int count = 1;
 		
+		int count = 1;		
 
 		while (count < 5) {
+			
 			
 			if (playerNumber > 100 || playerNumber < 1) {
 				System.out.println("Your guess is not between 1 and 100, please try again");
 				playerNumber = Integer.valueOf(scanner.nextLine()); 
 				
 			} else if (playerNumber < randomNum) {
-
 				System.out.println("Please pick a higher number");
 				playerNumber = Integer.valueOf(scanner.nextLine());
 				count++;
+				
 
 			} else if (playerNumber > randomNum) {
-
 				System.out.println("Please pick a lower number");
 				playerNumber = Integer.valueOf(scanner.nextLine());
 				count++;
+				
 
 			} else if (playerNumber == randomNum) {
 				System.out.println("You win!");
 				break;
 			}
 		} if (count == 5 && playerNumber != randomNum) {
+			
 			System.out.println("You lose, the number to guess was " + randomNum);
-		} 
+		} else if (count == 5 && playerNumber == randomNum) {
+			System.out.println("You win!");
+		}
 		scanner.close();
 
 		
